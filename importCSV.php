@@ -1,2 +1,1 @@
 <?php include("header.php");?>
-<h1>Total Crashes</h1>

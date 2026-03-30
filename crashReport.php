@@ -1,2 +1,2 @@
 <?php include("header.php");?>
-<h1>Total Crashes</h1>
+<h1 >Report a Crash</h1>
