@@ -7,6 +7,7 @@
 
     .reportTitle{
         font-size:48pt;
+        font-family: Comucan;
     }
 
     .inputBoxes{
@@ -21,6 +22,11 @@
         background-color:#446;
         color:white;
         border-radius:20px;
+        font-family: Comucan;
+    }
+        @font-face {
+        font-family: Comucan;
+        src: url(Comucan.otf);
     }
 </style>
 
@@ -28,7 +34,7 @@
 <div id="message"></div>
 <form id="crashForm">
 
-<p1>Location</p1><br>
+<p1>Location (ID code)</p1><br>
 <input class="inputBoxes" type="number" id="locationID" name="locationID" required> <br><br>
 
 <p1>Year (YYYY)</p1><br>
