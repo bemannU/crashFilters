@@ -5,7 +5,7 @@
         text-align:center;
     }
 
-    .reportTitle{
+    .title{
         font-size:48pt;
         font-family: Comucan;
     }
@@ -30,7 +30,7 @@
     }
 </style>
 
-<h1 class="reportTitle">Report a Crash</h1>
+<h1 class="title">Report a Crash</h1>
 <div id="message"></div>
 <form id="crashForm">
 

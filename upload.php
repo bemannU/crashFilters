@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["csvFile"])) {
 
     //loop through each row from the CSV and load into the database using the prepared statement
     foreach ($parsedData as $row) {
-        $locationID = $row[0];
+        $locationID = intval($row[0]); //convet to number
         $year = $row[1];
         $month = $row[2];
         $day = $row[3];
@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["csvFile"])) {
         $crashType = $row[11];
 
         // Bind the parameters to sql statement in this example we have 3 parameters all of which are strings so we use "sss" to indicate this
-        $stmt->bind_param("iisssiiissss", $data["locationID"], $data["year"], $data["month"], $data["day"], $data["time"], $data["totalFats"], $data["totalMI"], $data["totalSI"], $data["roadSurface"], $data["drugsInvolved"], $data["duiInvolved"], $data["crashType"]);
+        $stmt->bind_param("iisssiiissss", $locationID, $year, $month, $day, $time, $totalFats, $totalMI, $totalSI, $roadSurface, $drugsInvolved, $duiInvolved, $crashType);
         // Execute the statement and check for errors
         if (!$stmt->execute()) {
             echo json_encode(["message" => "Error inserting data: " . $stmt->error]);
