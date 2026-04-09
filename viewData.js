@@ -10,7 +10,7 @@ if (window.location.search) {
 }
 
 function getData(type) {
-    fetch("php/api.php", {
+    fetch("api.php", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -40,7 +40,7 @@ function searchPlayers() {
     console.log('searchPlayers');
     const searchInput = document.getElementById('search').value;
     console.log(searchInput);
-    fetch("php/api.php", {
+    fetch("api.php", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -65,7 +65,7 @@ function searchPlayers() {
 //this function prints out a list of students by passing in an array of data
 function printList(data) {
     // Clear the table rows accept header
-    dataOutput.innerHTML = '<tr><th>First Name</th><th>Last Name</th><th>Year Level</th></tr>';
+    dataOutput.innerHTML = '<th>Crash ID</th><th>Location ID</th><th>Year</th><th>Month</th><th>Day</th><th>Time</th><th>Fatalities</th><th>Minor Injuries</th><th>Serious Injuries</th><th>Road Surface</th><th>Drugs Involved</th><th>DUI Involved</th><th>Crash Type</th>';
     // Loop through the data and print each row into table
     data.forEach(row => {
         dataOutput.innerHTML += '<tr><td>' + row.first + '</td><td>' + row.last + '</td><td>' + row.year_level + '</td></tr>';
