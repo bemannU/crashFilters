@@ -15,7 +15,7 @@ if(isset($data["request"])) {
 
 //api checks based on the request type and selects the relevent query
 if($request == "all"){
-    $sql = "SELECT * FROM main";
+    $sql = "SELECT * FROM main limit 100";
 
 }else{
     echo json_encode(["message" => "Invalid request"]);

@@ -26,9 +26,10 @@ function getData(type) {
             if (data.message) {
                 dataOutput.innerHTML = '<tr><td colspan="3">' + data.message + '</td></tr>';
                 return;
-                //if there is no message, print the data
+               // if there is no message, print the data
             } else {
                 printList(data);
+                console.log("works")
             }
         })
         //catch any errors and log them to the console
@@ -47,7 +48,7 @@ function searchPlayers() {
         },
         //send the search input to the server with specific request
         body: JSON.stringify({ request: "searchPlayer", search: searchInput })  // Send a request to get all data
-    })
+    })  
         .then(response => response.json())
         .then(data => {
             console.log(data);
@@ -64,11 +65,12 @@ function searchPlayers() {
 
 //this function prints out a list of students by passing in an array of data
 function printList(data) {
+    console.log(data)
     // Clear the table rows accept header
-    dataOutput.innerHTML = '<th>Crash ID</th><th>Location ID</th><th>Year</th><th>Month</th><th>Day</th><th>Time</th><th>Fatalities</th><th>Minor Injuries</th><th>Serious Injuries</th><th>Road Surface</th><th>Drugs Involved</th><th>DUI Involved</th><th>Crash Type</th>';
+    dataOutput.innerHTML = '<th>Crash ID</th> <th>Location ID</th> <th>Year</th> <th>Month</th> <th>Day</th> <th>Time</th> <th>Fatalities</th> <th>Minor Injuries</th> <th>Serious Injuries</th> <th>Road Surface</th> <th>Drugs Involved</th> <th>DUI Involved</th> <th>Crash Type</th>';
     // Loop through the data and print each row into table
     data.forEach(row => {
-        dataOutput.innerHTML += '<tr><td>' + row.first + '</td><td>' + row.last + '</td><td>' + row.year_level + '</td></tr>';
+        dataOutput.innerHTML += '<tr><td>' + row.crashID + '</td><td>' + row.locationID + '</td><td>' + row.year + '</td><td>' + row.month + '</td><td>' + row.day + '</td><td>' + row.time + '</td><td>' + row.totalFats + '</td><td>' + row.totalMI + '</td><td>' + row.totalSI + '</td><td>' + row.roadSurface + '</td><td>' + row.drugsInvolved + '</td><td>' + row.duiInvolved + '</td><td>' + row.crashType + '</td></tr>';
     });
 
 
