@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["csvFile"])) {
     foreach ($lines as $line) {
         $row = str_getcsv($line); // Convert CSV row into an array
 
-        // Ensure the row has at least 3 columns before inserting
+        // Ensure the row has at least 12 columns before inserting
         if (count($row) >= 12) {
             $parsedData[] = $row; // Add the parsed row to the parsedData array
         }
