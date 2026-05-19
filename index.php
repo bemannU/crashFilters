@@ -13,6 +13,9 @@
         font-family: Comucan;
         src: url(Comucan.otf);
     }
+    .page button{
+        padding: 10px;
+    }
 </style>
 <h1 class="title">Total Crashes</h1>
 
@@ -39,6 +42,11 @@
         </table>
         <hr>
         
+</div>
+<div>
+    <button id="prevButton" class="page button"><< prev</button>
+    <button id="nextButton" class="page button">next >></button>
+    <br>
 </div>
         <script src="viewData.js"></script>
     </body>

@@ -1,5 +1,22 @@
 const dataOutput = document.getElementById('dataOutput');
+const nextButton = document.getElementById("nextButton");
+const prevButton = document.getElementById("prevButton");
 
+let pageCount = 1;
+nextButton.addEventListener("click",nextPage);
+prevButton.addEventListener("click",prevPage);
+
+function nextPage(){
+    pageCount++
+    console.log(pageCount);
+    getData('all');
+}
+
+function prevPage(){
+    pageCount - 1
+    console.log(pageCount);
+    getData('all');
+}
 
 if (window.location.search) {
     const urlParams = new URLSearchParams(window.location.search);
@@ -9,13 +26,15 @@ if (window.location.search) {
     getData('all');
 }
 
+
+
 function getData(type) {
     fetch("api.php", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({ request: type })  // Send a request to get all data
+        body: JSON.stringify({ request: type, page: pageCount })  // Send a request to get all data
     })
         //convert the response to json
         .then(response => response.json())
@@ -66,6 +85,7 @@ function searchPlayers() {
 //this function prints out a list of students by passing in an array of data
 function printList(data) {
     console.log(data)
+        
     // Clear the table rows accept header
     dataOutput.innerHTML = '<th>Crash ID</th> <th>Location ID</th> <th>Year</th> <th>Month</th> <th>Day</th> <th>Time</th> <th>Fatalities</th> <th>Minor Injuries</th> <th>Serious Injuries</th> <th>Road Surface</th> <th>Drugs Involved</th> <th>DUI Involved</th> <th>Crash Type</th>';
     // Loop through the data and print each row into table

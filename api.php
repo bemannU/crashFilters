@@ -1,6 +1,7 @@
 <?php
 include "connect.php";  // Include your database connection file
 
+
 // Set the content type to JSON
 header("Content-Type: application/json");
 // Get the raw POST data and decode it as JSON
@@ -15,7 +16,10 @@ if(isset($data["request"])) {
 
 //api checks based on the request type and selects the relevent query
 if($request == "all"){
-    $sql = "SELECT * FROM main limit 100";
+    $page = $data["page"];
+    $os =($page *100)-100;
+    $sql = "SELECT * FROM main limit 100 offset $os";
+    //echo $sql;
 
 }else{
     echo json_encode(["message" => "Invalid request"]);
