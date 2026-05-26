@@ -8,6 +8,8 @@
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
 >
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <!-- nav -->
@@ -37,6 +39,9 @@
       </a>
       <a href="importCSV.php" class="navbar-item">
         Import CSV
+      </a>
+      <a href="graphs.php" class="navbar-item">
+        Graphs
       </a>
     </div>
   </div>

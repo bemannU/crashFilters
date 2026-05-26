@@ -13,7 +13,7 @@ function nextPage(){
 }
 
 function prevPage(){
-    pageCount - 1
+    pageCount = pageCount - 1
     console.log(pageCount);
     getData('all');
 }

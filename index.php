@@ -20,9 +20,6 @@
 <h1 class="title">Total Crashes</h1>
 
 <div class="container">
-        <!-- <input type="text" id="search" onkeyup="searchPlayers()" placeholder="Search Players">
-        <button class="button is-primary" onclick="getData('all')">Show All</button>
-        <button class="button is-primary" onclick="getData('year')">Show Year 12</button> -->
         <table class="table is-bordered" id="dataOutput">
             <tr>
                 <th>Crash ID</th>
